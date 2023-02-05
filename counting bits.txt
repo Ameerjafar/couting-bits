@@ -1,0 +1,19 @@
+class Solution {
+      int[] helper(int n) {
+        int[] ans1 = new int[n + 1];
+        for (int i = 0; i <= n; i++) {
+            int ans = i;
+            int sum = 0;
+            while (!(ans == 0)) {
+                int rem = ans % 2;
+                sum += rem;
+                ans = ans / 2;
+            }
+            ans1[i] = sum;
+        }
+        return ans1;
+    }
+    public int[] countBits(int n) {
+        return helper(n);
+    }
+}
